@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    {% include "alerts.html" %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Checking for Updates</h1>
+            <p>A new background job has been started to fetch the update status of all plugins.</p>
+            <p>See the logs for more details.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

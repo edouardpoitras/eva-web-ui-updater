@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    {% include "alerts.html" %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Updating {{ plugin_name }}</h1>
+            <p>Please <a href="/restart-page">restart</a> Eva for the changes to take effect.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

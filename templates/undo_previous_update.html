@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    {% include "alerts.html" %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Rollback Complete{{ plugin_name }}</h1>
+            <p>See logs for more details.</p>
+            <p>Please <a href="/restart-page">restart</a> Eva for the changes to take effect.</p>
+            <p>Note that you can only rollback once for each update. At this point, another undo will do nothing until another update has been applied to Eva. Hopefully you are not finding out too late.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    {% include "alerts.html" %}
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Updating all Plugins</h1>
+            <p>A new background job has been started to update all plugins.</p>
+            <p>Eva will automatically restart once complete.</p>
+            <p>If any issues occur, use the rollback button to undo the update (or restart Eva with the --rollback flag)</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
