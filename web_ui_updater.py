@@ -82,7 +82,8 @@ def update_plugin(plugin_id):
     else:
         success = None
         error = '%s could not be updated - see logs for more details' %plugin_name
-    menu_items = conf['plugins']['web_ui']['module'].ready_menu_items()
+    menu_items = []
+    gossip.trigger('eva.web_ui.menu_items', menu_items=menu_items)
     return render_template_string(UPDATE_PLUGIN_MARKUP,
                                   plugin_name=plugin_name,
                                   menu_items=menu_items,
@@ -99,7 +100,8 @@ def update_all():
                             UPDATE_DISABLED_PLUGINS,
                             True),
                       id='web_ui_updater_update_all')
-    menu_items = conf['plugins']['web_ui']['module'].ready_menu_items()
+    menu_items = []
+    gossip.trigger('eva.web_ui.menu_items', menu_items=menu_items)
     return render_template_string(UPDATE_ALL_MARKUP, menu_items=menu_items)
 
 def check_for_updates():
@@ -108,7 +110,8 @@ def check_for_updates():
     """
     update_check = conf['plugins']['updater']['module'].update_check
     scheduler.add_job(update_check, id='web_ui_updater_update_check')
-    menu_items = conf['plugins']['web_ui']['module'].ready_menu_items()
+    menu_items = []
+    gossip.trigger('eva.web_ui.menu_items', menu_items=menu_items)
     success = 'Note that this is currently \
                <a href="/plugins/configuration/updater">configured</a> \
                to run automatically every %s hours.' \
@@ -126,7 +129,8 @@ def undo_previous_update():
     else:
         error = None
         conf['plugins']['updater']['module'].rollback(reboot=False)
-    menu_items = conf['plugins']['web_ui']['module'].ready_menu_items()
+    menu_items = []
+    gossip.trigger('eva.web_ui.menu_items', menu_items=menu_items)
     return render_template_string(UNDO_PREVIOUS_UPDATE_MARKUP,
                                   menu_items=menu_items,
                                   error=error)
