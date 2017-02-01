@@ -28,7 +28,7 @@ def web_ui_start(app):
     app.add_url_rule('/plugins/rollback', 'undo_previous_update', undo_previous_update)
 
 @gossip.register('eva.web_ui_plugins.plugins_columns', provides=['web_ui_updater'])
-def web_ui_plugins_plugins_columns(plugins_cols):
+def web_ui_plugins_columns(plugins_cols):
     """
     todo
     """

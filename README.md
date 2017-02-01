@@ -3,6 +3,8 @@ Web UI Updater
 
 An Eva plugin that adds a way of updating plugins through the Web UI.
 
+![Web UI Updater](/screenshot.png?raw=true "https://127.0.0.1:8080/plugins")
+
 ## Installation
 
 Can be easily installed through the Web UI by using [Web UI Plugins](https://github.com/edouardpoitras/eva-web-ui-plugins).
